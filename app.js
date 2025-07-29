@@ -50,6 +50,20 @@ yargs(hideBin(process.argv))
       contact.detailContact(argv.nama);
     },
   })
+  .command({
+    command: "delete",
+    describe: "Menghapus kontak berdasarkan nama",
+    builder: {
+      nama: {
+        describe: "Nama lengkap",
+        demandOption: true,
+        type: "string",
+      },
+    },
+    handler(argv) {
+      contact.deleteContact(argv.nama);
+    },
+  })
 
   .parse();
 
